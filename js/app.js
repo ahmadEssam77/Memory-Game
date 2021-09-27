@@ -12,11 +12,12 @@
 */
 
 // =============== Select the needed elements ===============
-// const coverImg = document.querySelectorAll(".cover-img");
+const cards = document.querySelectorAll(".memory-card");
 
-// for (let i = 0; i < coverImg.length; i++) {
-//     coverImg[i].addEventListener("click", (e)=> {
-//         e.target.style.opacity = "0";
-//     });
-// }
+for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", function() {
+        this.classList.toggle("flip");
+        // console.log(this);
+    });
+}
 

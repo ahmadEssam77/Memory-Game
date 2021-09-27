@@ -16,6 +16,10 @@ section {
     height: 100vh;
 }
 
+.game-container {
+    perspective: 1000px;
+}
+
 .memory-card{
     position: relative;
     /* width: 24.4%; */
@@ -24,6 +28,9 @@ section {
     height: calc(33.33% - 4px);
     border: 1px solid #fff;
     margin: 2px;
+    transform: scale(1);
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 }
 
 img{
@@ -31,7 +38,23 @@ img{
     height: 100%;
     position: absolute;
     /* background-image: url(../images/10791689.jpg); */
+    backface-visibility: hidden;
 }
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.5s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.img-itself {
+    transform: rotateY(180deg);
+}
+
+
 
 @media screen and (max-width: 992px){
     .memory-card{
